@@ -9,9 +9,19 @@ while True:
     else:
         break
 
-power = 1
-powN  = 2
+"""
+power  = 1
+powN   = 2
+output = ''
 while powN <= N:
-    print(powN)
+    output += str(powN)+' '
     powN = pow(2, power := power + 1)    
-    
+
+print(output)
+"""
+
+# Второе решение
+
+var = 2
+while var := var * 2 <= N:
+    print(var)

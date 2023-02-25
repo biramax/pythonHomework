@@ -18,3 +18,11 @@ for i in range(numCoins): # 0 1 2 3 4
         numSide += 1
 
 print(f'Минимальное количество монет, которые нужно перевернуть: {numSide if numSide <= numCoins // 2 else numCoins - numSide}')
+
+# Второй способ
+
+from random import randint
+
+coins = [randint(0, 1) for _ in range(int(input()))]
+print(coins)
+print(min(coins.count(0), coins.count(1)))
