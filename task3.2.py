@@ -28,8 +28,8 @@ lst = [random.randint(1, 10) for _ in range(N)]
 
 print(f'Массив: {lst}')
 
-minDif = math.inf
-value = 0
+minDif = math.inf # или можно указать разницу с первым элементом списка: abs(X - lst[0])
+value = lst[0]
 
 for i in lst:
     dif = abs(X - i)
@@ -38,3 +38,30 @@ for i in lst:
         value = i
 
 print(f'Значение ближайшего по величине элемента: {value}')
+
+
+# Другое решение
+
+from random import randint
+
+n = int(input('n = '))
+lst = [randint(1, 10) for _ in range(n)]
+print(lst)
+
+x = int(input('x = '))
+
+dct = {abs(x - item): item for item in lst}
+print(dct)
+print(dct[min(dct)])
+
+# или вместо последних трёх строк можно написать
+
+print(min(lst, key=lambda i: abs(i - x)))
+
+"""
+lambda i: abs(i - x) - это ананимная функция вместо реальной:
+
+def func(i):
+    return abs(i - x)
+"""
+
