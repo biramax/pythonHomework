@@ -9,12 +9,21 @@ A = 2; B = 3 -> 8
 a = 3
 b = 5
 
-def rec(a, b, c = 1):
-    if b == 0:
-        return c
-    return rec(a, b - 1, c * a)
+# def rec(a, b, c = 1):
+#     if b == 0:
+#         return c
+#     return rec(a, b - 1, c * a)
 
-if b == 0:
-    print(1)
-else:
-    print(rec(a, b))
+# if b == 0:
+#     print(1)
+# else:
+#     print(rec(a, b))
+
+# Второе решение
+
+def degree(a, b):
+    if b == 0:
+        return 1
+    return a * degree(a, b - 1)
+
+print(degree(a, b))
