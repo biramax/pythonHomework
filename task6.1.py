@@ -10,5 +10,9 @@ a = int(input('Первый элемент: '))
 b = int(input('Разность: '))
 c = int(input('Количество элементов: '))
 
-for i in range(c):
-    print(a + i * b, end = ' ')
+# for i in range(c):
+#     print(a + i * b, end = ' ')
+
+# Второе решение 
+
+print(*range(a, (a + b * c), b))
