@@ -6,12 +6,34 @@
 **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 **Вывод:** Парам пам-пам  
 """
-phrases = 'пара-ра-рам рам-пам-папам па-ра-па-да'.split()
+phrases = 'пара-ра-рам рам-пам-папам па-ра-па-да'.lower().split()
 
+
+# Не моё решение
+
+ln = len(phrases)
+
+def get_count(phrase):
+    return len(list(filter(lambda i: i in 'аеёиоуыэюя', phrase)))
+
+res = True
+
+if ln > 1:
+    st = set(map(get_count, phrases))
+    if len(st) > 1:
+        res = False
+else:
+    res = False
+
+print('Парам пам-пам' if res else 'Пам парам')
+
+
+# Изначальное решение
+"""
 ltrs = 'аеёиоуыэюя'
-res  = True
-ln   = len(phrases)
-n    = None # число гласных во фразе
+res = True
+ln = len(phrases)
+n = None # число гласных во фразе
 
 # если фраз больше одной
 if ln > 1:
@@ -33,3 +55,5 @@ else:
     res = False
 
 print('Парам пам-пам' if res else 'Пам парам')
+"""
+
